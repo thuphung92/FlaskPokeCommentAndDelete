@@ -1,0 +1,27 @@
+<div class="card w-100 shadow-xss rounded-xxl border-0 ps-4 pt-4 pe-4 pb-3 mb-3 mt-3">
+                     
+    <div class="card-body p-0">
+        <figure>
+            <div class="text-center mb-2"><img class="w-25" src="{{pokemon.image_url}}" alt="image"></div>
+            <figcaption>Name: {{pokemon.name}}</figcaption>
+            <figcaption>Ability: {{pokemon.ability}}</figcaption>
+            <figcaption>Base Experience: {{pokemon.experience}}</figcaption>
+            <figcaption>Sprite URL: <a href="{{pokemon.sprite_url}}">click here</a></figcaption>
+        </figure>
+    </div>
+
+    <div class="card-body p-0">
+       Comment:
+    </div>
+   
+    <div class="card-body p-0 mt-2 position-relative">
+        <figure class="avatar position-absolute ms-2 mt-1 top-5"><img src="{{current_user.get_icon_url()}}" alt="image" class="shadow-sm rounded-circle w30"></figure>
+
+        <form method="POST" action="{{url_for('main.comment', id=pokemon.id)}}">
+            <textarea name="body" class="h100 bor-0 w-100 rounded-xxl p-2 ps-5 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg form-control" cols="30" rows="10" placeholder="What's on your mind?"></textarea>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+</div>

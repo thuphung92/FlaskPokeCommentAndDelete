@@ -1,0 +1,23 @@
+<div class="card w-100 shadow-xss rounded-xxl border-0 ps-4 pt-4 pe-4 pb-3 mb-3 mt-3">
+                     
+    <div class="card-body p-0">
+        <figure>
+            <div class="text-center mb-2"><img class="w-25" src="{{comment.poke.image_url}}" alt="image"></div>
+        </figure>
+    </div>
+  
+    <div class="card-body p-0">
+        <div class=" font-xssss fw-600 text-grey-500 card-body p-0 d-flex align-items-center"><figure class="avatar ms-2 mt-1 p-2 top-5"><img src="{{comment.author.get_icon_url()}}" alt="image" class="shadow-sm rounded-circle w30"></figure> </i> {{comment.author.first_name}} {{comment.author.last_name}}</div>
+        
+    </div>
+
+    <div class="card-body p-0 mt-3 position-relative">
+        <div name="message" class="h100 bor-0 w-100 rounded-xxl p-2 ps-5 font-xssss fw-500 border-light-md theme-dark-bg" cols="30" rows="10">{{comment.body}}</div>
+    </div>
+    {% if current_user.id == comment.author.id %}
+    <div>
+        <span class="float-end" ><small><a href="{{url_for('main.delete_comment', id=comment.id)}}" style="color:lightcoral"><i class="fa fa-trash" aria-hidden="true"></i></a></small></span>      
+    </div>
+    {% endif %}
+
+</div>

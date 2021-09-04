@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Homepage
+{% endblock %}
+
+{% block css %}
+ 
+{% endblock %}
+
+{% block content %}
+	<!-- Main content
+	============================================= -->
+	<div class="main-content bg-lightblue theme-dark-bg right-chat-active">
+        <div class="middle-sidebar-bottom">
+            <div class="middle-sidebar-left">
+                <div class="middle-wrap">
+                    <div class="card w-100 border-0 bg-white shadow-xs p-0 mb-4">
+                        <div class="card-body p-lg-5 p-4 w-100 border-0">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h1>Hello {{current_user.first_name}}! Welcome to <span class="d-inline-block fredoka-font ls-3 fw-600 text-current mb-0">friendbook </span>!</h1><br>
+                                    Share what you are thinking with us... 
+                                    <div class="text-center mb-3">
+                                        <img src="{{url_for('static',filename='images/welcome.png')}}" class="img-responsive w-100">
+						            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    	<div class="card w-100 shadow-xss rounded-xxl border-0 ps-4 pt-4 pe-4 pb-3 mb-3 mt-3">
+                        
+                            <div class="card-body p-0">
+                                <a href="" class=" font-xssss fw-600 text-grey-500 card-body p-0 d-flex align-items-center"><i class="btn-round-sm font-xs text-primary feather-edit-3 me-2 bg-greylight"></i>Create Post</a>
+                            </div>
+
+                            <div class="card-body p-0 mt-3 position-relative">
+                                <figure class="avatar position-absolute ms-2 mt-1 top-5"><img src="{{current_user.get_icon_url()}}" alt="image" class="shadow-sm rounded-circle w30"></figure>
+                                <textarea name="message" class="h100 bor-0 w-100 rounded-xxl p-2 ps-5 font-xssss text-grey-500 fw-500 border-light-md theme-dark-bg" cols="30" rows="10" placeholder="What's on your mind?"></textarea>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+
+
+	</div><!-- #main content end -->
+
+{% endblock %}

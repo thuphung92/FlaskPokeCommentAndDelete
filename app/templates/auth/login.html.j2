@@ -1,0 +1,43 @@
+{% extends 'landing.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-contain bg-no-repeat" style="background-image: url({{url_for('static',filename='images/landing/login1.jpg')}}); background-position: center"></div>
+        <div class="col-xl-7 vh-100 align-items-center d-flex bg-white rounded-3 overflow-hidden">
+            <div class="card shadow-none border-0 ms-auto me-auto login-card">
+                <div class="card-body rounded-0 text-left">
+                    <h2 class="fw-700 display1-size display2-md-size mb-3">Login into <br>your account</h2>
+                    <form action="{{url_for('auth.login')}}" method="POST">
+                        {{ form.hidden_tag() }}
+                        {# email section #}
+                        {{ form.email.label(class="form-label") }}
+                        {{ form.email(class="form-control") }}
+                        {# email errors #}
+                        {% for error in form.email.errors %}
+                        <small style="color:red;">{{ error }}</small><br>
+                        {% endfor %}
+                        {# password section #}
+                        {{ form.password.label(class="form-label") }}
+                        {{ form.password(class="form-control") }}
+                        {# submit section #}
+                        {{ form.submit(class="btn text-center style2-input text-white fw-600 bg-dark border-0 p-1 mt-2 w-100") }}
+                    </form>
+                     
+                    <div class="col-sm-12 p-0 text-left">
+                        <h6 class="text-grey-500 font-xsss fw-500 mt-0 mb-0 lh-32">Dont have account <a href="{{url_for('auth.register')}}" class="fw-700 ms-1">Register</a></h6>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

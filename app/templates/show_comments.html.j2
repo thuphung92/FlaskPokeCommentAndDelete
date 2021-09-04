@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Catched Pokemon
+{% endblock %}
+
+{% block css %}
+ 
+{% endblock %}
+
+{% block content %}
+	<!-- Main content
+	============================================= -->
+	<div class="main-content bg-lightblue theme-dark-bg right-chat-active">
+        <div class="middle-sidebar-bottom">
+            <div class="middle-sidebar-left">
+                <div class="middle-wrap">
+                
+                    	<div class="card w-100 shadow-xss rounded-xxl border-0 ps-4 pt-4 pe-4 pb-3 mb-3 mt-3">
+
+                            {% for comment in comments %}
+                                {% include './includes/_comment.html' %}
+                            {% endfor %}
+                        
+                        </div>    
+                        </div>
+                 
+                </div>
+            </div>
+        </div>
+		
+
+
+	</div><!-- #main content end -->
+
+{% endblock %}
